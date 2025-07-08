@@ -1,0 +1,87 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f1f5f9; /* slate-100 */
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-option {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-option:hover:not(:disabled) {
+    transform: scale(1.02);
+    background-color: #e2e8f0; /* slate-200 */
+}
+
+.correct {
+    background-color: #16a34a !important; /* green-600 */
+    color: white;
+    border-color: #15803d; /* green-700 */
+}
+
+.incorrect {
+    background-color: #dc2626 !important; /* red-600 */
+    color: white;
+    border-color: #b91c1c; /* red-700 */
+}
+
+/* Accordion styles */
+.accordion-header {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #f8fafc; /* slate-50 */
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.accordion-content.open {
+    max-height: 20000px; /* Increased for large content */
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.open .accordion-icon {
+    transform: rotate(90deg);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+.modal-overlay {
+    transition: opacity 0.3s ease;
+}
