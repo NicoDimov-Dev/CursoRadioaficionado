@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     { q: '99) ¿Qué elemento se utiliza para irradiar energía?', o: ['Líneas de transmisión.', 'Antena.', 'Transmisores.', 'Amplificadores de RF'], a: [1] },
                     { q: '100) Un transceptor es un equipo:', o: ['Transmisor especifico.', 'Que reúne las funciones de transmisor y receptor.', 'Receptor especifico.', 'Receptor bibanda'], a: [1] },
                     { q: '101) El PTT de un equipo es:', o: ['La etapa de transmisión.', 'El interruptor para recibir.', 'El interruptor que se debe presionar para transmitir.', 'La fuente de alimentación'], a: [2] },
-                    { q: '102) La antena puede ser desconectada del transmisor y operar en vacío:', o: ['Para comunicados de corta distancia.', 'Cuando el transmisor esta en clase C.', 'Nunca.', 'Cuando se opera en VHF ó UHF'], a: [2] },
+                    { q: '102) La antena puede ser desconectada del transmisor y operar en vacío:', o: ['Para comunicados de corta distancia.', 'Quando o transmissor está na classe C.', 'Nunca.', 'Quando se opera em VHF ou UHF'], a: [2] },
                     { q: '103) En un receptor, ¿qué etapa está inmediatamente después de la antena?', o: ['Mezclador.', 'Amplificador de FI.', 'Amplificador de RF.', 'Amplificador de AF'], a: [2] },
                     { q: '104) En un transformador reductor, el número de vueltas del primario es:', o: ['Menor que el secundario', 'Mayor que el secundario', 'Igual que las del secundario.', 'La mitad que las del secundario.'], a: [1] },
                     { q: '105) ¿Qué significa la sigla OFV?', o: ['Oscilador de fuente de voltaje.', 'Oscilador de frecuencia variable.', 'Oscilador foto voltaico.', 'Oscilador de fase virtual.'], a: [1] },
@@ -313,59 +313,67 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: "Reglamento Esencial",
             content: `
-                <p>La <strong>Autoridad de Aplicación</strong> en Argentina es el <strong>ENACOM</strong> (Ente Nacional de Comunicaciones).</p>
-                <p>La <strong>licencia de radioaficionado</strong> tiene una vigencia de <strong>5 años</strong> y habilita para operar en el Servicio de Radioaficionados y Radioaficionados por Satélite.</p>
-                <p>La <strong>señal distintiva</strong> debe transmitirse como mínimo cada <strong>10 minutos</strong>.</p>
-                <p>Está prohibido transmitir música o tratar temas de índole política, religiosa o racial. El uso de lenguaje soez o insultante es una falta grave.</p>
-                <p>La conexión de equipos a la red telefónica solo está permitida en casos de <strong>emergencia</strong>.</p>
-                <p>La organización que representa a los radioaficionados a nivel mundial es la <strong>IARU</strong> (International Amateur Radio Union).</p>
+                <p><strong>Autoridad de Aplicación:</strong> En Argentina es el <strong>ENACOM</strong> (Ente Nacional de Comunicaciones).</p>
+                <p><strong>Vigencia de Licencia:</strong> La licencia de radioaficionado tiene una vigencia de <strong>5 años</strong>.</p>
+                <p><strong>Identificación:</strong> Es obligatorio transmitir la señal distintiva como mínimo cada <strong>10 minutos</strong> para identificarse.</p>
+                <p><strong>Contenido de las Transmisiones:</strong> Está terminantemente prohibido transmitir música, mensajes de índole política, religiosa o racial, y utilizar lenguaje soez o insultante.</p>
+                <p><strong>Conexión a Red Telefónica (Patch):</strong> Solo se permite en situaciones de <strong>emergencia</strong> comprobada.</p>
+                <p><strong>Organización Internacional:</strong> La <strong>IARU</strong> (International Amateur Radio Union) representa los intereses de los radioaficionados a nivel mundial.</p>
+                <p><strong>Orden de Observancia:</strong> Para un radioaficionado argentino, el orden de importancia de la normativa es: 1° Reglamento General de Radioaficionados, 2° Disposiciones de la IARU, 3° Reglamentación de la UIT.</p>
             `
         },
         {
-            title: "Categorías y Potencias",
+            title: "Categorías, Potencias y Requisitos",
             content: `
-                <p><strong>Categoría Novicio:</strong> Edad mínima 9 años. Potencia máxima autorizada <strong>200 Watts</strong>.</p>
-                <p><strong>Ascenso a General:</strong> Se requieren <strong>3 años</strong> de actividad ininterrumpida en categoría Novicio.</p>
-                <p><strong>Operación en Radio Clubes:</strong> Un radioaficionado puede operar la estación de un Radio Club, pero solo en las bandas autorizadas para <strong>su propia categoría</strong>.</p>
+                <p><strong>Categoría Novicio:</strong> La edad mínima para obtenerla es <strong>9 años</strong>. La potencia máxima autorizada es de <strong>200 Watts</strong> de pico de portadora.</p>
+                <p><strong>Ascenso a General:</strong> Se requieren <strong>3 años</strong> de actividad ininterrumpida en la categoría Novicio.</p>
+                <p><strong>Operación en Radio Clubes:</strong> Un radioaficionado puede operar la estación de un Radio Club, pero debe hacerlo dentro de las bandas y modos autorizados para <strong>su propia categoría</strong>.</p>
+                 <p><strong>Señales Distintivas Especiales:</strong> Se otorgan por <strong>1 año</strong> a Radioaficionados de categoría General o Superior y a Radio Clubes para eventos especiales.</p>
             `
         },
         {
             title: "Conceptos Técnicos Fundamentales",
             content: `
-                <p><strong>Ley de Ohm:</strong> Relaciona Tensión (V), Corriente (I) y Resistencia (R). Su fórmula es <strong>V = I x R</strong>.</p>
-                <p><strong>Unidades de Medida:</strong> Tensión en <strong>Volts (V)</strong>, Corriente en <strong>Amperes (A)</strong>, Resistencia en <strong>Ohms (Ω)</strong>, Potencia en <strong>Watts (W)</strong>, Capacitancia en <strong>Faradios (F)</strong> e Inductancia en <strong>Henrios (H)</strong>.</p>
-                <p><strong>Circuitos Serie y Paralelo:</strong> En un circuito <strong>serie</strong>, las resistencias se suman (RT = R1 + R2). En un circuito <strong>paralelo</strong>, la capacidad total de los capacitores se suma (CT = C1 + C2).</p>
-            `
-        },
-        {
-            title: "Componentes Electrónicos",
-            content: `
-                <p><strong>Capacitor:</strong> Bloquea el paso de la corriente continua y almacena energía. El material que separa sus placas se llama <strong>dieléctrico</strong>.</p>
-                <p><strong>Diodo:</strong> Permite el paso de la corriente en un solo sentido. Un <strong>puente rectificador</strong> se compone de diodos y convierte corriente alterna en continua.</p>
-                <p><strong>Transistor:</strong> Su función principal es <strong>amplificar señales débiles</strong> o actuar como interruptor. Sus elementos son Colector, Base y Emisor.</p>
-                <p><strong>Transformador:</strong> Eleva o reduce una tensión alterna. Se compone de dos bobinas (primario y secundario).</p>
-            `
-        },
-        {
-            title: "Antenas y Líneas de Transmisión",
-            content: `
-                <p><strong>Impedancia:</strong> La mayoría de los equipos y cables coaxiales (como el RG-58 o RG-213) usan una impedancia característica de <strong>50 ohms</strong>.</p>
-                <p><strong>ROE (Relación de Ondas Estacionarias):</strong> Mide el desajuste de impedancia entre la línea y la antena. Un valor ideal es 1:1. Para una buena ROE, se busca <strong>baja potencia reflejada y alta potencia incidente</strong>.</p>
-                <p><strong>Tipos de Antena:</strong> Una antena <strong>vertical</strong> es omnidireccional (irradia en todas direcciones horizontalmente). Un <strong>dipolo</strong> es bidireccional. Una <strong>Yagi</strong> es direccional y posee mayor ganancia.</p>
-                <p><strong>Polarización:</strong> Para comunicados vía repetidoras en VHF se usa polarización <strong>vertical</strong>. Para comunicados en SSB en VHF/UHF, se usa polarización <strong>horizontal</strong>.</p>
-                <p><strong>Líneas de Transmisión:</strong> El cable <strong>coaxil</strong> es una línea desbalanceada. Las líneas abiertas (o escalerita) son balanceadas y tienen menor pérdida.</p>
-            `
-        },
-        {
-            title: "Planes de Banda (Resumen para Novicio)",
-            content: `
-                <p>Un radioaficionado de categoría <strong>Novicio</strong> tiene acceso a varias bandas, pero con algunas limitaciones importantes:</p>
+                <p><strong>Ley de Ohm:</strong> Es la relación fundamental entre Tensión (V), Corriente (I) y Resistencia (R). Su fórmula es <strong>V = I x R</strong>. Permite calcular una de las variables si se conocen las otras dos.</p>
+                <p><strong>Unidades de Medida Clave:</strong></p>
                 <ul>
-                    <li class="ml-4 list-disc"><strong>Puede operar en:</strong> 80m, 40m, 10m, 2m y 70cm, entre otras.</li>
-                    <li class="ml-4 list-disc"><strong>Tiene restricciones en:</strong> 20m (no puede operar en el segmento de CW 14.000-14.070 kHz) y 15m.</li>
-                    <li class="ml-4 list-disc"><strong>NO puede transmitir en:</strong> 30 metros.</li>
-                    <li class="ml-4 list-disc">La única actividad permitida en <strong>17 metros</strong> es la emisión de una Radiobaliza.</li>
+                    <li class="ml-4 list-disc">Tensión (Diferencia de potencial): <strong>Volts (V)</strong></li>
+                    <li class="ml-4 list-disc">Corriente (Flujo de electrones): <strong>Amperes (A)</strong></li>
+                    <li class="ml-4 list-disc">Resistencia (Oposición al flujo): <strong>Ohms (Ω)</strong></li>
+                    <li class="ml-4 list-disc">Potencia (Trabajo eléctrico): <strong>Watts (W)</strong></li>
+                    <li class="ml-4 list-disc">Capacitancia (Almacenamiento de carga): <strong>Faradios (F)</strong></li>
+                    <li class="ml-4 list-disc">Inductancia (Oposición a cambios de corriente): <strong>Henrios (H)</strong></li>
                 </ul>
+                <p><strong>Circuitos Serie y Paralelo:</strong></p>
+                <ul>
+                    <li class="ml-4 list-disc">En un circuito <strong>serie</strong>, las resistencias se suman (RT = R1 + R2). La corriente es la misma en todos los componentes.</li>
+                    <li class="ml-4 list-disc">En un circuito <strong>paralelo</strong>, la capacidad total de los capacitores se suma (CT = C1 + C2). La tensión es la misma en todos los componentes.</li>
+                </ul>
+            `
+        },
+        {
+            title: "Componentes Electrónicos Clave",
+            content: `
+                <p><strong>Capacitor:</strong> Su función principal es <strong>bloquear el paso de la corriente continua</strong> y permitir el paso de la alterna. Almacena energía en un campo eléctrico. El material aislante entre sus placas se llama <strong>dieléctrico</strong>.</p>
+                <p><strong>Diodo:</strong> Actúa como una válvula de un solo sentido: <strong>permite el paso de la corriente en una dirección</strong> y la bloquea en la opuesta. Un <strong>puente rectificador</strong>, compuesto por 4 diodos, es fundamental para convertir corriente alterna (CA) en corriente continua (CC).</p>
+                <p><strong>Transistor:</strong> Es uno de los componentes más importantes. Su función principal es <strong>amplificar señales débiles</strong> o actuar como un interruptor controlado electrónicamente. Sus tres terminales son Colector, Base y Emisor.</p>
+                <p><strong>Transformador:</strong> Se utiliza para <strong>elevar o reducir una tensión alterna</strong>. Consiste en dos bobinas (primario y secundario) acopladas magnéticamente. No funciona con corriente continua.</p>
+            `
+        },
+        {
+            title: "Antenas y Propagación",
+            content: `
+                <p><strong>Impedancia:</strong> La mayoría de los equipos de radioaficionado y cables coaxiales (como el RG-58 o RG-213) están diseñados para una impedancia característica de <strong>50 ohms</strong>.</p>
+                <p><strong>ROE (SWR):</strong> La Relación de Ondas Estacionarias mide el desajuste de impedancia. Un valor ideal es 1:1. Una ROE alta significa que mucha potencia es reflejada de vuelta al transmisor, lo cual es ineficiente y puede dañar el equipo. Para una buena ROE, se busca <strong>baja potencia reflejada</strong>.</p>
+                <p><strong>Tipos de Antena:</strong></p>
+                <ul>
+                    <li class="ml-4 list-disc"><strong>Vertical:</strong> Es omnidireccional (irradia 360° en el plano horizontal).</li>
+                    <li class="ml-4 list-disc"><strong>Dipolo simple:</strong> Es bidireccional, irradia perpendicularmente a su hilo.</li>
+                    <li class="ml-4 list-disc"><strong>Yagi:</strong> Es direccional, concentra la energía en una dirección, logrando "ganancia".</li>
+                </ul>
+                <p><strong>Polarización:</strong> Es la orientación del campo eléctrico de la onda. Para comunicados vía repetidoras en VHF/UHF se usa polarización <strong>vertical</strong>. Para comunicados en SSB ("laterales") en VHF/UHF, se prefiere la polarización <strong>horizontal</strong>.</p>
+                <p><strong>Propagación Ionosférica (HF):</strong> Las ondas de radio rebotan en las capas de la ionosfera (D, E, F1, F2) para lograr comunicados a larga distancia. Esta propagación es fuertemente influenciada por el <strong>ciclo de manchas solares</strong> (de aprox. 11 años).</p>
+                <p><strong>Propagación en VHF/UHF:</strong> Las ondas normalmente viajan en <strong>línea recta</strong> (línea de vista). Fenómenos como la "Esporádica-E" pueden permitir comunicados a larga distancia.</p>
             `
         }
     ];
@@ -547,9 +555,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const questionData = currentQuestions[currentQuestionIndex];
         if (questionData.answered) return;
         
-        // Check if at least one option is selected
         if (questionData.userSelection.length === 0) {
-            alert("Por favor, selecciona al menos una respuesta antes de confirmar.");
+            // Using a more subtle feedback than alert
+            const feedbackContainer = document.getElementById('feedback-container');
+            const originalButton = feedbackContainer.innerHTML;
+            feedbackContainer.innerHTML = '<p class="text-red-500 font-semibold">Por favor, selecciona al menos una respuesta.</p>';
+            setTimeout(() => {
+                // Restore the button if it's still there
+                if(document.getElementById('confirm-answer')) {
+                   feedbackContainer.innerHTML = originalButton;
+                }
+            }, 2000);
             return;
         }
 
@@ -564,7 +580,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         optionButtons.forEach((button, index) => {
             button.disabled = true;
-            // No need to remove 'selected' as we are overriding with correct/incorrect
             if (correctAnswers.includes(index)) {
                 button.classList.add('correct');
             } else if (userAnswers.includes(index)) {
