@@ -16,12 +16,18 @@ body {
 }
 
 .btn-option {
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-option:hover:not(:disabled) {
     transform: scale(1.02);
     background-color: #e2e8f0; /* slate-200 */
+}
+
+/* Estilo para opciones seleccionadas en preguntas de respuesta múltiple */
+.btn-option.selected {
+    background-color: #bae6fd !important; /* sky-200 */
+    border-color: #38bdf8; /* sky-400 */
 }
 
 .correct {
