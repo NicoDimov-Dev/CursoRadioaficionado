@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Reglamento Esencial",
             content: `
                 <p><strong>Autoridad de Aplicación:</strong> En Argentina es el <strong>ENACOM</strong> (Ente Nacional de Comunicaciones).</p>
-                <p><strong>Vigencia de Licencia:</strong> La licencia de radioaficionado tiene una vigencia de <strong>5 años</strong>.</p>
+                <p><strong>Vigencia de Licencia:</strong> La licencia de radioaficionado tiene una vigencia de <strong>5 años</strong> y habilita para operar en el Servicio de Radioaficionados y Radioaficionados por Satélite.</p>
                 <p><strong>Identificación:</strong> Es obligatorio transmitir la señal distintiva como mínimo cada <strong>10 minutos</strong> para identificarse.</p>
                 <p><strong>Contenido de las Transmisiones:</strong> Está terminantemente prohibido transmitir música, mensajes de índole política, religiosa o racial, y utilizar lenguaje soez o insultante.</p>
                 <p><strong>Conexión a Red Telefónica (Patch):</strong> Solo se permite en situaciones de <strong>emergencia</strong> comprobada.</p>
@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: "Categorías, Potencias y Requisitos",
             content: `
-                <p><strong>Categoría Novicio:</strong> La edad mínima para obtenerla es <strong>9 años</strong>. La potencia máxima autorizada es de <strong>200 Watts</strong> de pico de portadora.</p>
+                <p><strong>Categoría Novicio:</strong> Edad mínima 9 años. Potencia máxima autorizada <strong>200 Watts</strong> de pico de portadora.</p>
                 <p><strong>Ascenso a General:</strong> Se requieren <strong>3 años</strong> de actividad ininterrumpida en la categoría Novicio.</p>
                 <p><strong>Operación en Radio Clubes:</strong> Un radioaficionado puede operar la estación de un Radio Club, pero debe hacerlo dentro de las bandas y modos autorizados para <strong>su propia categoría</strong>.</p>
                  <p><strong>Señales Distintivas Especiales:</strong> Se otorgan por <strong>1 año</strong> a Radioaficionados de categoría General o Superior y a Radio Clubes para eventos especiales.</p>
@@ -532,7 +532,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (button) {
                 const index = parseInt(button.dataset.index);
                 if (isMultiAnswer) {
-                    // Toggle selection for multi-answer
                     button.classList.toggle('selected');
                     if (questionData.userSelection.includes(index)) {
                         questionData.userSelection = questionData.userSelection.filter(i => i !== index);
@@ -540,7 +539,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         questionData.userSelection.push(index);
                     }
                 } else {
-                    // Deselect others and select the new one for single-answer
                     optionsContainer.querySelectorAll('.btn-option').forEach(btn => btn.classList.remove('selected'));
                     button.classList.add('selected');
                     questionData.userSelection = [index];
@@ -556,14 +554,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (questionData.answered) return;
         
         if (questionData.userSelection.length === 0) {
-            // Using a more subtle feedback than alert
             const feedbackContainer = document.getElementById('feedback-container');
             const originalButton = feedbackContainer.innerHTML;
             feedbackContainer.innerHTML = '<p class="text-red-500 font-semibold">Por favor, selecciona al menos una respuesta.</p>';
             setTimeout(() => {
-                // Restore the button if it's still there
-                if(document.getElementById('confirm-answer')) {
-                   feedbackContainer.innerHTML = originalButton;
+                const confirmButton = document.getElementById('confirm-answer');
+                if(!confirmButton) { // It means we have moved to the next question
+                    feedbackContainer.innerHTML = originalButton;
                 }
             }, 2000);
             return;
