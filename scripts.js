@@ -508,45 +508,51 @@ document.addEventListener('DOMContentLoaded', () => {
         quizContent.innerHTML = `
             <div class="mb-6">
                 <p class="text-xl font-semibold text-slate-900">${questionData.q}</p>
-                ${isMultiAnswer ? '<p class="text-sm text-slate-500 mt-2">Atención: Esta pregunta tiene más de una respuesta correcta. Selecciona todas las que correspondan y confirma.</p>' : ''}
+                <p class="text-sm text-slate-500 mt-2">${isMultiAnswer ? 'Selecciona todas las que correspondan y confirma.' : 'Selecciona una respuesta y confirma.'}</p>
             </div>
             <div id="options-container" class="grid grid-cols-1 gap-4">
                 ${questionData.o.map((option, index) => `<button class="btn-option w-full text-left p-4 rounded-lg border-2 border-slate-300 bg-slate-100" data-index="${index}"><span class="font-bold mr-2">${String.fromCharCode(65 + index)}.</span> ${option}</button>`).join('')}
             </div>
             <div id="feedback-container" class="mt-6 text-center">
-                ${isMultiAnswer ? `<button id="confirm-answer" class="mt-4 px-8 py-3 bg-teal-600 text-white font-semibold rounded-lg shadow-md hover:bg-teal-700">Confirmar Respuesta</button>` : ''}
+                <button id="confirm-answer" class="mt-4 px-8 py-3 bg-teal-600 text-white font-semibold rounded-lg shadow-md hover:bg-teal-700">Confirmar Respuesta</button>
             </div>
         `;
         
         const optionsContainer = document.getElementById('options-container');
-        if (isMultiAnswer) {
-            optionsContainer.addEventListener('click', (e) => {
-                const button = e.target.closest('.btn-option');
-                if (button) {
+        optionsContainer.addEventListener('click', (e) => {
+            const button = e.target.closest('.btn-option');
+            if (button) {
+                const index = parseInt(button.dataset.index);
+                if (isMultiAnswer) {
+                    // Toggle selection for multi-answer
                     button.classList.toggle('selected');
-                    const index = parseInt(button.dataset.index);
                     if (questionData.userSelection.includes(index)) {
                         questionData.userSelection = questionData.userSelection.filter(i => i !== index);
                     } else {
                         questionData.userSelection.push(index);
                     }
+                } else {
+                    // Deselect others and select the new one for single-answer
+                    optionsContainer.querySelectorAll('.btn-option').forEach(btn => btn.classList.remove('selected'));
+                    button.classList.add('selected');
+                    questionData.userSelection = [index];
                 }
-            });
-            document.getElementById('confirm-answer').addEventListener('click', () => checkAnswer());
-        } else {
-            optionsContainer.addEventListener('click', (e) => {
-                const button = e.target.closest('.btn-option');
-                if (button) {
-                    questionData.userSelection.push(parseInt(button.dataset.index));
-                    checkAnswer();
-                }
-            });
-        }
+            }
+        });
+
+        document.getElementById('confirm-answer').addEventListener('click', () => checkAnswer());
     }
     
     function checkAnswer() {
         const questionData = currentQuestions[currentQuestionIndex];
         if (questionData.answered) return;
+        
+        // Check if at least one option is selected
+        if (questionData.userSelection.length === 0) {
+            alert("Por favor, selecciona al menos una respuesta antes de confirmar.");
+            return;
+        }
+
         questionData.answered = true;
         
         const optionButtons = quizContent.querySelectorAll('.btn-option');
@@ -558,7 +564,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         optionButtons.forEach((button, index) => {
             button.disabled = true;
-            button.classList.remove('selected');
+            // No need to remove 'selected' as we are overriding with correct/incorrect
             if (correctAnswers.includes(index)) {
                 button.classList.add('correct');
             } else if (userAnswers.includes(index)) {
