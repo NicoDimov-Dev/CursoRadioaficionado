@@ -487,7 +487,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const category = db[section][categoryIndex];
         const shuffled = [...category.questions].sort(() => 0.5 - Math.random());
         const examSize = Math.min(shuffled.length, EXAM_QUESTIONS_COUNT);
-        currentQuestions = shuffled.slice(0, examSize).map(q => ({...q, answered: false }));
+        currentQuestions = shuffled.slice(0, examSize).map(q => ({...q, answered: false, userSelection: [] }));
         currentQuestionIndex = 0;
         score = 0;
         quizTitle.textContent = `${category.category} (Examen)`;
@@ -503,39 +503,65 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         const questionData = currentQuestions[currentQuestionIndex];
+        const isMultiAnswer = questionData.a.length > 1;
+
         quizContent.innerHTML = `
             <div class="mb-6">
                 <p class="text-xl font-semibold text-slate-900">${questionData.q}</p>
-                ${questionData.a.length > 1 ? '<p class="text-sm text-slate-500 mt-2">Atención: puede haber más de una respuesta correcta.</p>' : ''}
+                ${isMultiAnswer ? '<p class="text-sm text-slate-500 mt-2">Atención: Esta pregunta tiene más de una respuesta correcta. Selecciona todas las que correspondan y confirma.</p>' : ''}
             </div>
             <div id="options-container" class="grid grid-cols-1 gap-4">
                 ${questionData.o.map((option, index) => `<button class="btn-option w-full text-left p-4 rounded-lg border-2 border-slate-300 bg-slate-100" data-index="${index}"><span class="font-bold mr-2">${String.fromCharCode(65 + index)}.</span> ${option}</button>`).join('')}
             </div>
-            <div id="feedback-container" class="mt-6 text-center"></div>
+            <div id="feedback-container" class="mt-6 text-center">
+                ${isMultiAnswer ? `<button id="confirm-answer" class="mt-4 px-8 py-3 bg-teal-600 text-white font-semibold rounded-lg shadow-md hover:bg-teal-700">Confirmar Respuesta</button>` : ''}
+            </div>
         `;
+        
         const optionsContainer = document.getElementById('options-container');
-        optionsContainer.addEventListener('click', (e) => {
-            const button = e.target.closest('.btn-option');
-            if (button && !questionData.answered) {
-                checkAnswer(parseInt(button.dataset.index));
-            }
-        });
+        if (isMultiAnswer) {
+            optionsContainer.addEventListener('click', (e) => {
+                const button = e.target.closest('.btn-option');
+                if (button) {
+                    button.classList.toggle('selected');
+                    const index = parseInt(button.dataset.index);
+                    if (questionData.userSelection.includes(index)) {
+                        questionData.userSelection = questionData.userSelection.filter(i => i !== index);
+                    } else {
+                        questionData.userSelection.push(index);
+                    }
+                }
+            });
+            document.getElementById('confirm-answer').addEventListener('click', () => checkAnswer());
+        } else {
+            optionsContainer.addEventListener('click', (e) => {
+                const button = e.target.closest('.btn-option');
+                if (button) {
+                    questionData.userSelection.push(parseInt(button.dataset.index));
+                    checkAnswer();
+                }
+            });
+        }
     }
     
-    function checkAnswer(selectedIndex) {
+    function checkAnswer() {
         const questionData = currentQuestions[currentQuestionIndex];
         if (questionData.answered) return;
         questionData.answered = true;
-        const optionButtons = quizContent.querySelectorAll('.btn-option');
         
-        const isCorrect = questionData.a.includes(selectedIndex);
+        const optionButtons = quizContent.querySelectorAll('.btn-option');
+        const userAnswers = questionData.userSelection.sort();
+        const correctAnswers = questionData.a.sort();
+
+        const isCorrect = JSON.stringify(userAnswers) === JSON.stringify(correctAnswers);
         if (isCorrect) score++;
         
         optionButtons.forEach((button, index) => {
             button.disabled = true;
-            if (questionData.a.includes(index)) {
+            button.classList.remove('selected');
+            if (correctAnswers.includes(index)) {
                 button.classList.add('correct');
-            } else if (index === selectedIndex) {
+            } else if (userAnswers.includes(index)) {
                 button.classList.add('incorrect');
             }
         });
