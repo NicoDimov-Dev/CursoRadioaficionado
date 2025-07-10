@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía para curso Radioaficionados - LU4MH</title>
+    <title>Guía rapida para curso Radioaficionados - Radioclub Aconcagua Las Heras (LU4MH)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -101,7 +101,7 @@
         }
         
         /* Styles for the study guide content */
-        #guia-content-area .prose h3 {
+        #guia-content-area .prose h3, #banco-content-area .prose h3 {
             font-size: 1.25rem;
             font-weight: 700;
             color: #1e293b; /* slate-800 */
@@ -109,15 +109,21 @@
             padding-bottom: 0.5rem;
             margin-bottom: 0.75rem;
         }
-        #guia-content-area .prose p, #guia-content-area .prose li {
+        #guia-content-area .prose p, #guia-content-area .prose li, #banco-content-area .prose p, #banco-content-area .prose li {
             color: #475569; /* slate-600 */
         }
-        #guia-content-area .prose strong {
+        #guia-content-area .prose strong, #banco-content-area .prose strong {
             color: #0f172a; /* slate-900 */
         }
-        #guia-content-area .prose ul {
+        #guia-content-area .prose ul, #banco-content-area .prose ul {
             list-style-type: disc;
             padding-left: 1.5rem;
+        }
+        #guia-content-area img, #banco-content-area img {
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            margin-top: 1rem;
+            margin-bottom: 1rem;
         }
 
     </style>
@@ -126,7 +132,7 @@
 
     <div id="app" class="container mx-auto p-4 md:p-8 max-w-7xl">
         <header class="text-center mb-8">
-            <h1 class="text-4xl md:text-5xl font-bold text-slate-900">Guía rapida para curso Radioaficionados <br> LU4MH - Radioclub Aconcagua Las Heras</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900">Guía rapida para curso Radioaficionados<br>LU4MH - Radioclub Aconcagua Las Heras</h1>
             <p class="text-slate-600 mt-2">Preguntas y temas de estudio (Banco de ENACOM)</p>
             <div>by Nico Dimov</div>
         </header>
@@ -139,7 +145,7 @@
                     Consultar Banco de Preguntas
                 </button>
                 <button id="btn-show-guia" class="flex-1 bg-teal-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-teal-700 transition-transform transform hover:scale-105">
-                    Guia simplificada por Temas
+                    Ver Guía por Temas
                 </button>
             </div>
         </div>
@@ -148,7 +154,7 @@
             <!-- TÍTULO PARA MODO EXAMEN -->
             <div class="text-center mb-8 pt-8 border-t-2 border-dashed border-slate-300">
                 <h2 class="text-3xl font-bold text-slate-800">Test de conocimiento por temas</h2>
-                <p class="text-slate-500 mt-1">Selecciona una categoría para iniciar un test de entre 10 y 15 preguntas al azar</p>
+                <p class="text-slate-500 mt-1">Selecciona una categoría para iniciar un test de 15 preguntas al azar.</p>
             </div>
 
             <!-- TABS PARA MODO EXAMEN -->
@@ -527,64 +533,43 @@
                         <p><strong>Contenido y Conducta:</strong> Está prohibido transmitir música, tratar temas políticos, religiosos o raciales, y usar lenguaje ofensivo. La ética del radioaficionado se basa en el respeto, la cordialidad y la disciplina.</p>
                         <p><strong>Libro de Guardia:</strong> Es obligatorio y debe estar foliado. Se deben registrar todos los comunicados con: fecha, hora de inicio y fin, señal distintiva del corresponsal, banda y modo de emisión.</p>
                         <p><strong>Tarjeta QSL:</strong> Es la confirmación escrita de un comunicado. Debe contener los datos del QSO (fecha, hora UTC, banda, modo, RST) para ser válida para diplomas.</p>
-                        <p><strong>Códigos Esenciales:</strong></p>
-                        <ul>
-                            <li class="ml-4 list-disc"><strong>Alfabeto Fonético:</strong> Se usa para deletrear indicativos y palabras (Alfa, Bravo, Charlie...).</li>
-                            <li class="ml-4 list-disc"><strong>Código Q:</strong> Abreviaturas de tres letras para preguntas y respuestas rápidas (ej: QTH: Domicilio, QSY: Cambiar de frecuencia, QRM: Interferencia artificial).</li>
-                            <li class="ml-4 list-disc"><strong>Código RST:</strong> Reporte de señal. En fonía se usa RS (Legibilidad y Fuerza). En telegrafía se añade la T de Tono (RST).</li>
-                        </ul>
                     `
                 },
                 {
-                    title: "Electricidad Básica y Ley de Ohm",
+                    title: "Códigos y Alfabetos",
                     content: `
-                        <p><strong>Conceptos Fundamentales:</strong> La electricidad es el flujo de electrones. La <strong>Tensión (V)</strong> es la fuerza que los empuja, la <strong>Corriente (I)</strong> es la cantidad de electrones que fluyen, y la <strong>Resistencia (R)</strong> es la oposición a ese flujo.</p>
-                        <p><strong>Ley de Ohm:</strong> Es la relación clave: <strong>Tensión = Corriente × Resistencia (V = I × R)</strong>. Esta ley permite calcular cualquiera de las tres variables si se conocen las otras dos.</p>
+                        <p><strong>Alfabeto Fonético Internacional (OTAN):</strong> Se usa para deletrear indicativos y palabras de forma clara para evitar confusiones. Es fundamental para la comunicación internacional.</p>
+                        <img src="http://googleusercontent.com/file_content/7" alt="Alfabeto Fonético Internacional">
+                        <p><strong>Código RST:</strong> Es el sistema estándar para reportar la calidad de una señal. En fonía se usa RS (Readability/Legibilidad y Strength/Fuerza). En telegrafía (CW) se añade la T de Tono (RST).</p>
+                        <img src="http://googleusercontent.com/file_content/6" alt="Código RST">
+                        <p><strong>Código 92:</strong> Un código numérico antiguo usado en telegrafía para abreviar frases comunes. El más conocido es "73" (Saludos y buenos deseos).</p>
+                        <img src="http://googleusercontent.com/file_content/8" alt="Código 92">
+                    `
+                },
+                {
+                    title: "Leyes de Ohm y Potencia",
+                    content: `
+                        <p><strong>Ley de Ohm:</strong> Es la relación fundamental entre Tensión (V), Corriente (I) y Resistencia (R). Su fórmula es <strong>V = I × R</strong>. Permite calcular una de las tres variables si se conocen las otras dos.</p>
                         <p><strong>Potencia Eléctrica (P):</strong> Se mide en <strong>Watts (W)</strong> y representa el trabajo realizado por la electricidad. Se calcula como <strong>P = V × I</strong>, o también como P = I² × R.</p>
-                        <p><strong>Corriente Continua (CC) y Alterna (CA):</strong> La CC fluye en una sola dirección (ej: baterías). La CA invierte su dirección periódicamente (ej: red domiciliaria). La frecuencia de la CA se mide en <strong>Hertz (Hz)</strong>.</p>
-                        <p><strong>Valores de CA:</strong> El valor que medimos con un multímetro es el <strong>valor eficaz (RMS)</strong>, que es aproximadamente 0,707 veces el valor de pico o máximo de la onda senoidal.</p>
+                        <img src="http://googleusercontent.com/file_content/4" alt="Fórmulas de Ley de Ohm y Potencia">
                     `
                 },
                 {
                     title: "Componentes Electrónicos",
                     content: `
-                        <p><strong>Resistencia:</strong> Se opone al paso de la corriente. Su valor se identifica con un <strong>código de colores</strong>. Un potenciómetro es una resistencia variable.</p>
-                        <p><strong>Capacitor (o Condensador):</strong> Almacena energía en un campo eléctrico. <strong>Bloquea la corriente continua</strong> pero deja pasar la corriente alterna. Su capacidad se mide en Faradios (F). El material aislante entre sus placas se llama <strong>dieléctrico</strong>.</p>
-                        <p><strong>Bobina (o Inductor):</strong> Almacena energía en un campo magnético. Se opone a los cambios de corriente. Su inductancia se mide en Henrios (H).</p>
-                        <p><strong>Circuito Resonante (LC):</strong> Una combinación de una bobina (L) y un capacitor (C) que resuena (ofrece mínima o máxima oposición) a una frecuencia específica. Es la base de los circuitos sintonizados. En resonancia, la reactancia inductiva (XL) es igual a la reactancia capacitiva (XC).</p>
-                        <p><strong>Diodo:</strong> Permite que la corriente fluya en un solo sentido. Son fundamentales en las <strong>fuentes de alimentación</strong> para rectificar la CA y convertirla en CC. Un <strong>puente rectificador</strong> se compone de 4 diodos.</p>
-                        <p><strong>Transistor:</strong> Componente semiconductor que actúa como <strong>amplificador o interruptor</strong>. Es la base de casi toda la electrónica moderna. Sus clases de operación (A, B, C) definen su eficiencia y linealidad.</p>
+                        <p><strong>Resistencias:</strong> Se oponen al paso de la corriente. Su valor se identifica con un <strong>código de colores</strong> que indica las cifras significativas, el multiplicador y la tolerancia.</p>
+                        <img src="http://googleusercontent.com/file_content/5" alt="Código de colores para resistencias">
+                        <p><strong>Capacitores:</strong> Almacenan energía en un campo eléctrico. Bloquean la corriente continua pero dejan pasar la corriente alterna. Su capacidad se mide en Faradios (F). El material aislante entre sus placas se llama <strong>dieléctrico</strong>.</p>
+                        <p><strong>Bobinas (Inductores):</strong> Almacenan energía en un campo magnético. Se oponen a los cambios de corriente. Su inductancia se mide en Henrios (H).</p>
+                        <p><strong>Diodos y Transistores:</strong> Los diodos permiten que la corriente fluya en un solo sentido. Los transistores actúan como amplificadores o interruptores y son la base de la electrónica moderna.</p>
                     `
                 },
                 {
-                    title: "Antenas y Líneas de Transmisión",
+                    title: "Planes de Banda",
                     content: `
-                        <p><strong>Función de la Antena:</strong> Es un transductor que convierte la energía de radiofrecuencia en ondas electromagnéticas (al transmitir) y viceversa (al recibir).</p>
-                        <p><strong>Impedancia:</strong> La mayoría de los equipos de radioaficionado y cables coaxiales (como el RG-58 o RG-213) están diseñados para una impedancia característica de <strong>50 ohms</strong>. La correcta adaptación de impedancias es crucial para la máxima transferencia de potencia.</p>
-                        <p><strong>ROE (Relación de Ondas Estacionarias):</strong> Mide el desajuste de impedancia entre la línea y la antena. Un valor ideal es 1:1. Una ROE alta significa que parte de la potencia es reflejada de vuelta al transmisor, lo cual es ineficiente y puede ser perjudicial.</p>
-                        <p><strong>Tipos de Antena:</strong></p>
-                        <ul>
-                            <li class="ml-4 list-disc"><strong>Dipolo de media onda:</strong> Antena básica, bidireccional. Su longitud física es aproximadamente un 5% menor que su longitud eléctrica debido al "efecto de puntas". Su impedancia en el centro es de aprox. 73 ohms en el espacio libre.</li>
-                            <li class="ml-4 list-disc"><strong>Vertical:</strong> Omnidireccional en el plano horizontal. Requiere un buen plano de tierra (físico o con radiales) para ser eficiente.</li>
-                            <li class="ml-4 list-disc"><strong>Yagi:</strong> Antena direccional con alta ganancia. Compuesta por un elemento excitado, un reflector (más largo) y uno o más directores (más cortos).</li>
-                        </ul>
-                        <p><strong>Líneas de Transmisión:</strong> El <strong>cable coaxial</strong> es una línea desbalanceada y blindada, ideal para evitar interferencias. La <strong>línea abierta</strong> (o bifilar) es balanceada y tiene menores pérdidas, pero es más susceptible a la interferencia.</p>
-                        <p><strong>Balun:</strong> Es un transformador que adapta una línea balanceada (como un dipolo) a una desbalanceada (como un cable coaxial).</p>
-                    `
-                },
-                {
-                    title: "Propagación y Modos Digitales",
-                    content: `
-                        <p><strong>Propagación Ionosférica (HF):</strong> Las ondas de radio en HF (3-30 MHz) se reflejan en las capas ionizadas de la atmósfera (capas E y F), permitiendo comunicados a larga distancia. Este fenómeno depende fuertemente del <strong>ciclo solar de 11 años</strong>.</p>
-                        <p><strong>MUF y LUF:</strong> La <strong>Frecuencia Máxima Utilizable (MUF)</strong> es la frecuencia más alta que se reflejará para una distancia dada. La <strong>Frecuencia Mínima Utilizable (LUF)</strong> es la más baja que no será absorbida por la capa D. La frecuencia óptima de trabajo (FOT) está ligeramente por debajo de la MUF.</p>
-                        <p><strong>Propagación en VHF/UHF:</strong> Normalmente es por <strong>línea de vista</strong>. Fenómenos como la "Esporádica-E" o la dispersión troposférica pueden permitir comunicados a larga distancia de forma ocasional.</p>
-                        <p><strong>Modos Digitales:</strong></p>
-                        <ul>
-                            <li class="ml-4 list-disc"><strong>PSK31:</strong> Modo de teclado a teclado muy eficiente, con un ancho de banda muy estrecho, ideal para baja potencia y condiciones de mala propagación.</li>
-                            <li class="ml-4 list-disc"><strong>RTTY (Radioteletipo):</strong> Uno de los modos digitales más antiguos, utiliza desplazamiento de frecuencia (FSK).</li>
-                            <li class="ml-4 list-disc"><strong>SSTV (Televisión de Barrido Lento):</strong> Permite enviar y recibir imágenes fijas.</li>
-                            <li class="ml-4 list-disc"><strong>Packet Radio:</strong> Permite la transmisión de "paquetes" de datos con corrección de errores, usado para BBS y APRS.</li>
-                        </ul>
+                        <p>El espectro radioeléctrico está dividido en bandas de frecuencia, cada una con características de propagación diferentes. Los radioaficionados tienen asignadas porciones de estas bandas según su categoría. Es fundamental operar dentro de las frecuencias y modos autorizados.</p>
+                        <img src="http://googleusercontent.com/file_content/3" alt="Plan de Bandas para Radioaficionados en Argentina">
+                        <p><strong>Atribución Primaria y Secundaria:</strong> Una banda con atribución <strong>Primaria</strong> tiene prioridad sobre otros servicios. En una banda <strong>Secundaria</strong>, el radioaficionado no debe causar interferencia a los servicios primarios y no puede reclamar protección contra interferencias de ellos.</p>
                     `
                 }
             ];
