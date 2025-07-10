@@ -311,69 +311,70 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- GUÍA DE ESTUDIO POR TEMAS ---
     const studyGuideContent = [
         {
-            title: "Reglamento Esencial",
+            title: "Reglamento y Ética Operativa",
             content: `
-                <p><strong>Autoridad de Aplicación:</strong> En Argentina es el <strong>ENACOM</strong> (Ente Nacional de Comunicaciones).</p>
-                <p><strong>Vigencia de Licencia:</strong> La licencia de radioaficionado tiene una vigencia de <strong>5 años</strong> y habilita para operar en el Servicio de Radioaficionados y Radioaficionados por Satélite.</p>
-                <p><strong>Identificación:</strong> Es obligatorio transmitir la señal distintiva como mínimo cada <strong>10 minutos</strong> para identificarse.</p>
-                <p><strong>Contenido de las Transmisiones:</strong> Está terminantemente prohibido transmitir música, mensajes de índole política, religiosa o racial, y utilizar lenguaje soez o insultante.</p>
-                <p><strong>Conexión a Red Telefónica (Patch):</strong> Solo se permite en situaciones de <strong>emergencia</strong> comprobada.</p>
-                <p><strong>Organización Internacional:</strong> La <strong>IARU</strong> (International Amateur Radio Union) representa los intereses de los radioaficionados a nivel mundial.</p>
-                <p><strong>Orden de Observancia:</strong> Para un radioaficionado argentino, el orden de importancia de la normativa es: 1° Reglamento General de Radioaficionados, 2° Disposiciones de la IARU, 3° Reglamentación de la UIT.</p>
-            `
-        },
-        {
-            title: "Categorías, Potencias y Requisitos",
-            content: `
-                <p><strong>Categoría Novicio:</strong> Edad mínima 9 años. Potencia máxima autorizada <strong>200 Watts</strong> de pico de portadora.</p>
-                <p><strong>Ascenso a General:</strong> Se requieren <strong>3 años</strong> de actividad ininterrumpida en la categoría Novicio.</p>
-                <p><strong>Operación en Radio Clubes:</strong> Un radioaficionado puede operar la estación de un Radio Club, pero debe hacerlo dentro de las bandas y modos autorizados para <strong>su propia categoría</strong>.</p>
-                 <p><strong>Señales Distintivas Especiales:</strong> Se otorgan por <strong>1 año</strong> a Radioaficionados de categoría General o Superior y a Radio Clubes para eventos especiales.</p>
-            `
-        },
-        {
-            title: "Conceptos Técnicos Fundamentales",
-            content: `
-                <p><strong>Ley de Ohm:</strong> Es la relación fundamental entre Tensión (V), Corriente (I) y Resistencia (R). Su fórmula es <strong>V = I x R</strong>. Permite calcular una de las variables si se conocen las otras dos.</p>
-                <p><strong>Unidades de Medida Clave:</strong></p>
+                <p><strong>Autoridad y Normativa:</strong> La entidad que regula la actividad en Argentina es el <strong>ENACOM</strong>. Los radioaficionados deben seguir un orden de observancia: 1° Reglamento General de Radioaficionados, 2° Disposiciones de la IARU (Unión Internacional de Radioaficionados), y 3° Reglamentación de la UIT (Unión Internacional de Telecomunicaciones).</p>
+                <p><strong>Licencia y Señal Distintiva:</strong> La licencia tiene una vigencia de <strong>5 años</strong>. La señal distintiva (o indicativo) debe transmitirse como mínimo cada <strong>10 minutos</strong> para una correcta identificación.</p>
+                <p><strong>Contenido y Conducta:</strong> Está prohibido transmitir música, tratar temas políticos, religiosos o raciales, y usar lenguaje ofensivo. La ética del radioaficionado se basa en el respeto, la cordialidad y la disciplina.</p>
+                <p><strong>Libro de Guardia:</strong> Es obligatorio y debe estar foliado. Se deben registrar todos los comunicados con: fecha, hora de inicio y fin, señal distintiva del corresponsal, banda y modo de emisión.</p>
+                <p><strong>Tarjeta QSL:</strong> Es la confirmación escrita de un comunicado. Debe contener los datos del QSO (fecha, hora UTC, banda, modo, RST) para ser válida para diplomas.</p>
+                <p><strong>Códigos Esenciales:</strong></p>
                 <ul>
-                    <li class="ml-4 list-disc">Tensión (Diferencia de potencial): <strong>Volts (V)</strong></li>
-                    <li class="ml-4 list-disc">Corriente (Flujo de electrones): <strong>Amperes (A)</strong></li>
-                    <li class="ml-4 list-disc">Resistencia (Oposición al flujo): <strong>Ohms (Ω)</strong></li>
-                    <li class="ml-4 list-disc">Potencia (Trabajo eléctrico): <strong>Watts (W)</strong></li>
-                    <li class="ml-4 list-disc">Capacitancia (Almacenamiento de carga): <strong>Faradios (F)</strong></li>
-                    <li class="ml-4 list-disc">Inductancia (Oposición a cambios de corriente): <strong>Henrios (H)</strong></li>
-                </ul>
-                <p><strong>Circuitos Serie y Paralelo:</strong></p>
-                <ul>
-                    <li class="ml-4 list-disc">En un circuito <strong>serie</strong>, las resistencias se suman (RT = R1 + R2). La corriente es la misma en todos los componentes.</li>
-                    <li class="ml-4 list-disc">En un circuito <strong>paralelo</strong>, la capacidad total de los capacitores se suma (CT = C1 + C2). La tensión es la misma en todos los componentes.</li>
+                    <li class="ml-4 list-disc"><strong>Alfabeto Fonético:</strong> Se usa para deletrear indicativos y palabras (Alfa, Bravo, Charlie...).</li>
+                    <li class="ml-4 list-disc"><strong>Código Q:</strong> Abreviaturas de tres letras para preguntas y respuestas rápidas (ej: QTH: Domicilio, QSY: Cambiar de frecuencia, QRM: Interferencia artificial).</li>
+                    <li class="ml-4 list-disc"><strong>Código RST:</strong> Reporte de señal. En fonía se usa RS (Legibilidad y Fuerza). En telegrafía se añade la T de Tono (RST).</li>
                 </ul>
             `
         },
         {
-            title: "Componentes Electrónicos Clave",
+            title: "Electricidad Básica y Ley de Ohm",
             content: `
-                <p><strong>Capacitor:</strong> Su función principal es <strong>bloquear el paso de la corriente continua</strong> y permitir el paso de la alterna. Almacena energía en un campo eléctrico. El material aislante entre sus placas se llama <strong>dieléctrico</strong>.</p>
-                <p><strong>Diodo:</strong> Actúa como una válvula de un solo sentido: <strong>permite el paso de la corriente en una dirección</strong> y la bloquea en la opuesta. Un <strong>puente rectificador</strong>, compuesto por 4 diodos, es fundamental para convertir corriente alterna (CA) en corriente continua (CC).</p>
-                <p><strong>Transistor:</strong> Es uno de los componentes más importantes. Su función principal es <strong>amplificar señales débiles</strong> o actuar como un interruptor controlado electrónicamente. Sus tres terminales son Colector, Base y Emisor.</p>
-                <p><strong>Transformador:</strong> Se utiliza para <strong>elevar o reducir una tensión alterna</strong>. Consiste en dos bobinas (primario y secundario) acopladas magnéticamente. No funciona con corriente continua.</p>
+                <p><strong>Conceptos Fundamentales:</strong> La electricidad es el flujo de electrones. La <strong>Tensión (V)</strong> es la fuerza que los empuja, la <strong>Corriente (I)</strong> es la cantidad de electrones que fluyen, y la <strong>Resistencia (R)</strong> es la oposición a ese flujo.</p>
+                <p><strong>Ley de Ohm:</strong> Es la relación clave: <strong>Tensión = Corriente × Resistencia (V = I × R)</strong>. Esta ley permite calcular cualquiera de las tres variables si se conocen las otras dos.</p>
+                <p><strong>Potencia Eléctrica (P):</strong> Se mide en <strong>Watts (W)</strong> y representa el trabajo realizado por la electricidad. Se calcula como <strong>P = V × I</strong>.</p>
+                <p><strong>Corriente Continua (CC) y Alterna (CA):</strong> La CC fluye en una sola dirección (ej: baterías). La CA invierte su dirección periódicamente (ej: red domiciliaria). La frecuencia de la CA se mide en <strong>Hertz (Hz)</strong>.</p>
             `
         },
         {
-            title: "Antenas y Propagación",
+            title: "Componentes Electrónicos",
             content: `
-                <p><strong>Impedancia:</strong> La mayoría de los equipos de radioaficionado y cables coaxiales (como el RG-58 o RG-213) están diseñados para una impedancia característica de <strong>50 ohms</strong>.</p>
-                <p><strong>ROE (SWR):</strong> La Relación de Ondas Estacionarias mide el desajuste de impedancia. Un valor ideal es 1:1. Una ROE alta significa que mucha potencia es reflejada de vuelta al transmisor, lo cual es ineficiente y puede dañar el equipo. Para una buena ROE, se busca <strong>baja potencia reflejada</strong>.</p>
+                <p><strong>Resistencia:</strong> Se opone al paso de la corriente. Su valor se identifica con un <strong>código de colores</strong>. Un potenciómetro es una resistencia variable.</p>
+                <p><strong>Capacitor (o Condensador):</strong> Almacena energía en un campo eléctrico. <strong>Bloquea la corriente continua</strong> pero deja pasar la corriente alterna. Su capacidad se mide en Faradios (F).</p>
+                <p><strong>Bobina (o Inductor):</strong> Almacena energía en un campo magnético. Se opone a los cambios de corriente. Su inductancia se mide en Henrios (H).</p>
+                <p><strong>Circuito Resonante (LC):</strong> Una combinación de una bobina (L) y un capacitor (C) que resuena (ofrece mínima o máxima oposición) a una frecuencia específica. Es la base de los circuitos sintonizados.</p>
+                <p><strong>Diodo:</strong> Permite que la corriente fluya en un solo sentido. Son fundamentales en las <strong>fuentes de alimentación</strong> para rectificar la CA y convertirla en CC.</p>
+                <p><strong>Transistor:</strong> Componente semiconductor que actúa como <strong>amplificador o interruptor</strong>. Es la base de casi toda la electrónica moderna. Sus clases de operación (A, B, C) definen su eficiencia y linealidad.</p>
+            `
+        },
+        {
+            title: "Antenas y Líneas de Transmisión",
+            content: `
+                <p><strong>Función de la Antena:</strong> Es un transductor que convierte la energía de radiofrecuencia en ondas electromagnéticas (al transmitir) y viceversa (al recibir).</p>
+                <p><strong>Impedancia:</strong> La mayoría de los equipos de radioaficionado y cables coaxiales (como el RG-58 o RG-213) están diseñados para una impedancia característica de <strong>50 ohms</strong>. La correcta adaptación de impedancias es crucial para la máxima transferencia de potencia.</p>
+                <p><strong>ROE (Relación de Ondas Estacionarias):</strong> Mide el desajuste de impedancia entre la línea y la antena. Un valor ideal es 1:1. Una ROE alta significa que parte de la potencia es reflejada de vuelta al transmisor, lo cual es ineficiente y puede ser perjudicial.</p>
                 <p><strong>Tipos de Antena:</strong></p>
                 <ul>
-                    <li class="ml-4 list-disc"><strong>Vertical:</strong> Es omnidireccional (irradia 360° en el plano horizontal).</li>
-                    <li class="ml-4 list-disc"><strong>Dipolo simple:</strong> Es bidireccional, irradia perpendicularmente a su hilo.</li>
-                    <li class="ml-4 list-disc"><strong>Yagi:</strong> Es direccional, concentra la energía en una dirección, logrando "ganancia".</li>
+                    <li class="ml-4 list-disc"><strong>Dipolo de media onda:</strong> Antena básica, bidireccional. Su longitud física es aproximadamente un 5% menor que su longitud eléctrica debido al "efecto de puntas".</li>
+                    <li class="ml-4 list-disc"><strong>Vertical:</strong> Omnidireccional en el plano horizontal. Requiere un buen plano de tierra (físico o con radiales) para ser eficiente.</li>
+                    <li class="ml-4 list-disc"><strong>Yagi:</strong> Antena direccional con alta ganancia. Compuesta por un elemento excitado, un reflector (más largo) y uno o más directores (más cortos).</li>
                 </ul>
-                <p><strong>Polarización:</strong> Es la orientación del campo eléctrico de la onda. Para comunicados vía repetidoras en VHF/UHF se usa polarización <strong>vertical</strong>. Para comunicados en SSB ("laterales") en VHF/UHF, se prefiere la polarización <strong>horizontal</strong>.</p>
-                <p><strong>Propagación Ionosférica (HF):</strong> Las ondas de radio rebotan en las capas de la ionosfera (D, E, F1, F2) para lograr comunicados a larga distancia. Esta propagación es fuertemente influenciada por el <strong>ciclo de manchas solares</strong> (de aprox. 11 años).</p>
-                <p><strong>Propagación en VHF/UHF:</strong> Las ondas normalmente viajan en <strong>línea recta</strong> (línea de vista). Fenómenos como la "Esporádica-E" pueden permitir comunicados a larga distancia.</p>
+                <p><strong>Líneas de Transmisión:</strong> El <strong>cable coaxial</strong> es una línea desbalanceada y blindada, ideal para evitar interferencias. La <strong>línea abierta</strong> (o bifilar) es balanceada y tiene menores pérdidas, pero es más susceptible a la interferencia.</p>
+                <p><strong>Balun:</strong> Es un transformador que adapta una línea balanceada (como un dipolo) a una desbalanceada (como un cable coaxial).</p>
+            `
+        },
+        {
+            title: "Propagación y Modos Digitales",
+            content: `
+                <p><strong>Propagación Ionosférica (HF):</strong> Las ondas de radio en HF (3-30 MHz) se reflejan en las capas ionizadas de la atmósfera (capas E y F), permitiendo comunicados a larga distancia. Este fenómeno depende fuertemente del <strong>ciclo solar de 11 años</strong>.</p>
+                <p><strong>MUF y LUF:</strong> La <strong>Frecuencia Máxima Utilizable (MUF)</strong> es la frecuencia más alta que se reflejará para una distancia dada. La <strong>Frecuencia Mínima Utilizable (LUF)</strong> es la más baja que no será absorbida por la capa D. La frecuencia óptima de trabajo (FOT) está ligeramente por debajo de la MUF.</p>
+                <p><strong>Propagación en VHF/UHF:</strong> Normalmente es por <strong>línea de vista</strong>. Fenómenos como la "Esporádica-E" o la dispersión troposférica pueden permitir comunicados a larga distancia de forma ocasional.</p>
+                <p><strong>Modos Digitales:</strong></p>
+                <ul>
+                    <li class="ml-4 list-disc"><strong>PSK31:</strong> Modo de teclado a teclado muy eficiente, con un ancho de banda muy estrecho, ideal para baja potencia y condiciones de mala propagación.</li>
+                    <li class="ml-4 list-disc"><strong>RTTY (Radioteletipo):</strong> Uno de los modos digitales más antiguos, utiliza desplazamiento de frecuencia (FSK).</li>
+                    <li class="ml-4 list-disc"><strong>SSTV (Televisión de Barrido Lento):</strong> Permite enviar y recibir imágenes fijas.</li>
+                    <li class="ml-4 list-disc"><strong>Packet Radio:</strong> Permite la transmisión de "paquetes" de datos con corrección de errores, usado para BBS y APRS.</li>
+                </ul>
             `
         }
     ];
@@ -478,17 +479,37 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderGuiaDeEstudio() {
         guiaContentArea.innerHTML = '';
         const container = document.createElement('div');
-        container.className = 'prose max-w-none'; // Use prose for better text formatting
+        container.className = 'space-y-4';
         studyGuideContent.forEach(topic => {
-            const topicDiv = document.createElement('div');
-            topicDiv.className = 'p-4 mb-4 bg-slate-50 rounded-lg';
-            topicDiv.innerHTML = `
-                <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2 mb-3">${topic.title}</h3>
-                <div class="space-y-2 text-slate-700">${topic.content}</div>
+            const accordionItem = document.createElement('div');
+            accordionItem.className = 'bg-white rounded-xl shadow-md overflow-hidden';
+            accordionItem.innerHTML = `
+                <div class="accordion-header p-6 flex justify-between items-center">
+                     <h3 class="text-xl font-bold text-slate-800">${topic.title}</h3>
+                     <svg class="accordion-icon h-6 w-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </div>
+                <div class="accordion-content">
+                    <div class="prose max-w-none p-6 pt-0">${topic.content}</div>
+                </div>
             `;
-            container.appendChild(topicDiv);
+            container.appendChild(accordionItem);
         });
-        guiaContentArea.appendChild(container);
+         guiaContentArea.appendChild(container);
+
+         container.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const wasOpen = content.classList.contains('open');
+                container.querySelectorAll('.accordion-content.open').forEach(openContent => {
+                    openContent.classList.remove('open');
+                    openContent.previousElementSibling.classList.remove('open');
+                });
+                if (!wasOpen) {
+                    header.classList.add('open');
+                    content.classList.add('open');
+                }
+            });
+        });
     }
 
     function startQuiz(section, categoryIndex) {
@@ -555,12 +576,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (questionData.userSelection.length === 0) {
             const feedbackContainer = document.getElementById('feedback-container');
-            const originalButton = feedbackContainer.innerHTML;
+            const originalButtonHTML = feedbackContainer.innerHTML;
             feedbackContainer.innerHTML = '<p class="text-red-500 font-semibold">Por favor, selecciona al menos una respuesta.</p>';
             setTimeout(() => {
                 const confirmButton = document.getElementById('confirm-answer');
-                if(!confirmButton) { // It means we have moved to the next question
-                    feedbackContainer.innerHTML = originalButton;
+                if(confirmButton) {
+                   feedbackContainer.innerHTML = originalButtonHTML;
                 }
             }, 2000);
             return;
@@ -661,3 +682,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Carga inicial
     renderExamCategories('reglamento');
 });
+    </script>
+</body>
+</html>
